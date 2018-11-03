@@ -1,6 +1,16 @@
 'use strict'
 var windows = [];
 var currWindow;
+// oNEDB AND BACKEND STUFF
+var Client = require('onedb-client').Client;
+var onedb = new Client({
+        hosts: {
+                primary: {
+                        location: 'https://one-db.datafire.io',
+                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1c3RpbmViZXJlQGdtYWlsLmNvbSIsInBlcm1pc3Npb25zVG9HcmFudCI6bnVsbCwiaWF0IjoxNTQxMjYyNzEyLCJleHAiOjE1NDEzNDkxMTJ9.UGBxnzmfXw6Qo8OWAGabtAsdMa59m0w9RGtsO4lyEtk"
+                },
+        }
+});
 
 
 $(function (){
@@ -65,13 +75,20 @@ var back = function() {
         }
 }
 
-
-// oNEDB AND BACKEND STUFF
-var onedb = new OneDBClient({
-        hosts: {
-                primary: { location: 'https://one-db.datafire.io' },
+var setInfo = function(choice) {
+        var query = {
+                "data.tags" : choice
+        };
+        var locations = onedb.list('homie_locations', 'location', query).items;
+        var markers = [];
+        for(loc of locations){
+                add = loc.address
+                address = add.number + " " + add.streetName + " " + add.city + " " + add.state + " " + add.zip;
+                
         }
-});
+}
+
+
 
 
 

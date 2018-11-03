@@ -1,0 +1,224 @@
+[
+        {
+                "Name":"Family Shelter Project Hope",
+                "Address": {
+                        "number": 45,
+                        "streetName": "Magnolia Street",
+                        "city": "Dorchester",
+                        "state": "MA",
+                        "zip": "02125"
+                },
+                "phone":"617 442 1880",
+                "tags":["family", "emergency"]
+        },
+        {
+                "Name": "Mary Eliza Mahoney House Family Shelter",
+                "Address": {
+                        "number": 41,
+                        "streetName": "Dimock Street",
+                        "city": "Roxbury",
+                        "state": "MA",
+                        "zip": "02119"
+                },
+                "phone": "617 442 8800",
+        "tags": [
+                        "family",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Sojourner House Family Shelter",
+                "Address": {
+                        "number": 85,
+                        "streetName": "ROckland Street",
+                        "city": "Roxbury",
+                        "state": "MA",
+                        "zip": "02119"
+                },
+                "phone": "617 442 0590",
+        "tags": [
+                        "family",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Family House Shelter",
+                "Address": {
+                        "number": 250,
+                        "streetName": "Columbia Road",
+                        "city": "Dorchester",
+                        "state": "MA",
+                        "zip": "02121"
+                },
+                "phone": "617 427 4470",
+        "tags": [
+                        "family",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Queen of Peace Family Shelter",
+                "Address": {
+                        "number": 401,
+                        "streetName": "Quincy Street",
+                        "city": "Boston",
+                        "state": "MA",
+                        "zip": "02125"
+                },
+                "phone": "617 288 4182",
+        "tags": [
+                        "family",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Y2Y Harvard Square",
+                "Address": {
+                        "number": 1,
+                        "streetName": "Church Street",
+                        "city": "Cambridge",
+                        "state": "MA",
+                        "zip": "02138"
+                },
+                "phone": "617 864-0795",
+        "tags": [
+                        "adult",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Somerville Homeless Coalition Adult Shelter",
+                "Address": {
+                        "number": 14,
+                        "streetName": "Chapel Street",
+                        "city": "Somerville",
+                        "state": "MA",
+                        "zip": "02144"
+                },
+                "phone": "617 623 2546",
+        "tags": [
+                        "adult",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Father Bill's Place",
+                "Address": {
+                        "number": 38,
+                        "streetName": "Broad Street",
+                        "city": "Quincy",
+                        "state": "MA",
+                        "zip": "02169"
+                },
+                "phone": "617 770 3314",
+        "tags": [
+                        "adult",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Pilgrim Church Shelter",
+                "Address": {
+                        "number": 540,
+                        "streetName": "Columbia Road",
+                        "city": "Dorchester",
+                        "state": "MA",
+                        "zip": "02125"
+                },
+                "phone": "617 282 0456",
+        "tags": [
+                        "adult",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Southampton Street Shelter",
+                "Address": {
+                        "number": 112,
+                        "streetName": "Southampton Street",
+                        "city": "Boston",
+                        "state": "MA",
+                        "zip": "02118"
+                },
+                "phone": "617 534 6100",
+        "tags": [
+                        "adult",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Battered Women's Emergency Shelter Elizabeth Stone House",
+                "Address": {
+                        "number": 8,
+                        "streetName": "Notre Dame Street",
+                        "city": "Boston",
+                        "state": "MA",
+                        "zip": "02119"
+                },
+                "phone": "617 427 9801",
+        "tags": [
+                        "women",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Bristol Lodge Women's Shelter",
+                "Address": {
+                        "number": 205,
+                        "streetName": "Bacon Street",
+                        "city": "Waltham",
+                        "state": "MA",
+                        "zip": "02451"
+                },
+                "phone": "781-894-1225",
+        "tags": [
+                        "women",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Father Bill's Place",
+                "Address": {
+                        "number": 38,
+                        "streetName": "Broad Street",
+                        "city": "Quincy",
+                        "state": "MA",
+                        "zip": "02169"
+                },
+                "phone": "617 770 3314",
+        "tags": [
+                        "women",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Woods Mullen Shelter and Services",
+                "Address": {
+                        "number": 794,
+                        "streetName": "Massachusetts Ave",
+                        "city": "Bostom",
+                        "state": "MA",
+                        "zip": "02118"
+                },
+                "phone": "617 534-7100",
+        "tags": [
+                        "women",
+                        "emergency"
+                ]
+        },
+        {
+                "Name": "Casa Myrna Vazquez Domestic Violence Support",
+                "Address": {
+                        "number": 38,
+                        "streetName": "Wareham Street",
+                        "city": "Boston",
+                        "state": "MA",
+                        "zip": "02118"
+                },
+                "phone": "(617) 521-0100",
+        "tags": [
+                        "women",
+                        "emergency"
+                ]
+        }
+]

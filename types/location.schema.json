@@ -24,11 +24,8 @@
                                 }
                         }
                 },
-                "lat": {
-                        "type": "number"
-                },
-                "lng": {
-                        "type": "number"
+                "phone":{
+                        "type":"string"
                 },
                 "tags": {
                         "type":"array",
