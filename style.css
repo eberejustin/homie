@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: rgb(243, 148, 24);
+  background-color: #333;
 }
 
 body {
@@ -48,7 +48,7 @@ body {
  */
 .masthead {
         
-        color:black;
+        color:white;
   margin-bottom: 2rem;
   
 }
@@ -57,12 +57,13 @@ body {
   text-align:center;
 }
 
+.back{float:left;}
+
 @media (min-width: 48em) {
   .masthead-brand {
 
   }
 }
-
 
 /*
  * Cover
@@ -75,7 +76,15 @@ body {
   font-weight: 700;
 }
 
-.homie-home .col-sm a{
-        float: left;
+.window .row button{
+        margin:5px 5px;
+        width: 100%;
 }
 
+.col-sm{
+        padding-top:3px;
+}
+
+.window{
+        display:none;
+}
