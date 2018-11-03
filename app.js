@@ -60,7 +60,9 @@ var setInfo = function(choice) {
 
 var back = function() {
         windows.pop();
-        display(windows.pop());
+        if(windows.length > 0) {
+                display(windows.pop());
+        }
 }
 
 
@@ -70,6 +72,7 @@ var onedb = new OneDBClient({
                 primary: { location: 'https://one-db.datafire.io' },
         }
 });
+
 
 
 
