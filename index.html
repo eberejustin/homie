@@ -44,8 +44,8 @@
               <button onclick="makeChoice('shelter')" class="col btn btn-lg btn-secondary">Emergency Housing</button><br><br>
               <button onclick="makeChoice('prevent')" class="col btn btn-lg btn-secondary">Plan Against Homelessness</button>
                <div class="w-100"></div>
-              <button onclick="makeChoice('permanent')" class="col btn btn-lg btn-secondary">Permanent Housing</button><br><br>
-              <button onclick="makeChoice('drop-in')" class="col btn btn-lg btn-secondary">Drop-in programs</button>
+              <button onclick="makeChoice('transition')" class="col btn btn-lg btn-secondary">Transitional Housing</button><br><br>
+              <button onclick="makeChoice('resources')" class="col btn btn-lg btn-secondary">Drop-in programs</button>
           </div>
         </div>
 
@@ -64,11 +64,44 @@
 
         <!--Map and shelters-->
         <div class="window" id="map-info">
-          <div class="lead row">
-            <div class="col-12 col-md-8" id="map"></div>
-            <div class="col-6 col-md-4"></div>
+          <p class="lead maphead"></p>
+          <div class="lead row" id="map">
           </div>
         </div>
+
+        <!--User info window - transitional-->
+        <div class="window" id='trans-info'>
+          <h1 class="cover-heading">Who are you?</h1>
+          <p class="lead">I am a ...</p>
+          <div class="lead row">
+            <button onclick="setInfoT('men')" class="col btn btn-lg btn-secondary">Man</button><br><br>
+            <button onclick="setInfoT('women')" class="col btn btn-lg btn-secondary">Woman</button>
+            <div class="w-100"></div>
+            <button onclick="setInfoT('veteran')" class="col btn btn-lg btn-secondary">Veteran</button><br><br>
+            <div class="col"></div>
+          </div>
+        </div>
+
+        <!--Stats Window-->
+        <div class="window" id='stats'>
+          <div class="statistics">
+            <h2 class="statTitle" id=statTitle>Enter a city for recent housing price statistics.</h2>
+            <form class="submission" onsubmit="look_up_city(); return false">
+              City: <br><input type="text" name="city" placeholder="ex. Boston"><br>
+              State: <br><input type="text" name="state" placeholder="ex. MA" />
+              <br /><br><button type="submit" class="btn btn-light">Submit</button>
+            </form><br />
+            <hr>
+            <h3 class="the_data">The Data:</h3>
+            <div class="data_collection" id=data>
+              <strong>Median</strong> Listing Price - All Homes: <div id="MedianListing"></div><br>
+              <strong>Median</strong> Rental Price - All Homes: <div id="MedianRental"></div><br>
+              Percent Of Homes <strong>Decreasing</strong> In Values - All Homes: <div id="PercentDecreasing"></div><br>
+              Percent Of Homes <strong>Increasing</strong> In Values - All Homes: <div id="PercentIncreasing"></div>
+            </div>
+          </div>
+        </div>
+
       </main>
     </div>
 
@@ -83,9 +116,10 @@
     <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyobQXT0RQfWJpv7Xr8FmxukRdA_87Ec4">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyobQXT0RQfWJpv7Xr8FmxukRdA_87Ec4&libraries=geometry">
     </script>
     <script src="node_modules/onedb-client/dist/onedb-client.min.js"></script>
     <script src="app.js"></script>
+    <script src="data_functionality.js"></script>
   </body>
 </html>

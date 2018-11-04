@@ -39,7 +39,7 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 80%;
 }
 
 .space{
@@ -61,7 +61,7 @@ body {
   
 }
 .masthead img {
-    width: 12%;
+    width: 8%;
 }
 
 .masthead-brand {
@@ -109,5 +109,72 @@ body {
 }
 
 #map{
-        height: 400px;
+        height: 415px;
 }
+
+#info{
+  color: black;
+  background-color: white;
+  overflow: scroll;
+   height: 415px;
+}
+
+/* Statistics */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+#stats{
+  height:500px;
+  overflow:scroll;
+}
+.statistics {
+    background-color: #333;
+    text-align:left;
+}
+.statTitle {
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+}
+.submission {
+    display: inline-block;
+    color: white;
+    font-size: 1.2em;
+}
+.the_data {
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+}
+.data_collection{
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+table, th, td {
+   /* border: 1px solid white; */
+}
+table {
+    width: 50%;
+}
+
+th {
+    height: 50px;
+}
+td {
+    height: 30px;
+    vertical-align: bottom;
+}
+th, td {
+    padding-left: 8px;
+    text-align: left;
+}
+tr:hover {background-color: darkgray;}
+tr:nth-child(even) {background-color: #f2f2f2; color:black;}

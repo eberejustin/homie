@@ -4,8 +4,8 @@ var currWindow;
 var geo;
 var maps;
 var lat, lng;
-var loc = { lat: 42.318928, lng: -71.079979 };
-var markers;
+var myloc;
+var infowindow;
 
 $(function (){
         $("#homie-home").slideDown();
@@ -26,20 +26,21 @@ var onedb = new OneDBClient({
 
 function navigate() {
        
-        maps.panTo(loc); 
+        maps.panTo(myloc); 
         var image = "https://raw.githubusercontent.com/googlemaps/js-samples/gh-pages/places/icons/number_1.png";
         var marker = new google.maps.Marker({
                 map: maps,
-                position: loc,
+                position: myloc,
                 icon: image
         });
 
 }
 
 var initMap = function () {
-
+        infowindow = new google.maps.InfoWindow();
+        myloc = new google.maps.LatLng(42.318928, -71.079979);
         maps = new google.maps.Map(document.getElementById('map'), {
-                center: loc,
+                center: myloc,
                 zoom: 14, mapTypeControl: false, fullscreenControl: false
         });
         navigate();
@@ -50,6 +51,7 @@ var display = function(window){
         $(currWindow).hide();
         $(window).slideDown();
         currWindow = window;
+        windows.push(currWindow);
 }
 
 // Choose option at home
@@ -59,10 +61,10 @@ var makeChoice =  function(choice) {
                         display("#user-info");
                         break;
                 case "prevent":
-                         // code block
+                        display("#stats");
                         break;
-                case "permanent":
-                        // code block
+                case "transition":
+                        display("#trans-info");
                         break;
                 case "drop-in":
                         // code block
@@ -70,7 +72,6 @@ var makeChoice =  function(choice) {
                 default:
                 // code block
         }
-        windows.push(currWindow);
 }
 
 //choose options at user-info page
@@ -81,12 +82,31 @@ var setInfo = function (choice) {
         };
 
         display("#map-info");
-        windows.push(currWindow);
+        $(".maphead").text("Shelters: Emergency for " + choice);
         initMap();
         onedb.list('homie_locations', 'location', query)
                 .then(function (res) {
                         setloc(res.items);
                 });
+        
+        
+}
+
+//choose options ant transitional
+var setInfoT = function (choice) {
+        var query = {
+                "data.tags": [choice, "transitional"]
+        };
+
+        display("#map-info");
+        $(".maphead").text("Housing: Emergency for " + choice);
+        initMap();
+        onedb.list('homie_locations', 'location', query)
+                .then(function (res) {
+                        setloc(res.items);
+                });
+
+
 }
 
 var back = function() {
@@ -96,27 +116,36 @@ var back = function() {
         }
 }
 
-
-
-
-
 var setloc = function(locations){
-        markers = [];
         geo = new google.maps.Geocoder();
-        for (var loc of locations) {
-                var add = loc.Address
-                var address = add.number + " " + add.streetName + " " + add.city + " " + add.state + " " + add.zip;
-                geo.geocode({ 'address': address }, function (results, status) {
-                        if (status == 'OK') {
-                                var marker = new google.maps.Marker({
-                                        map: maps,
-                                        position: results[0].geometry.location
-                                });
-                                markers.push({marker: loc});
-                        } else {
-                                alert('Geocode was not successful for the following reason: ' + status);
-                        }
-                });
-        }
-}
+        console.log(locations);
+        locations.forEach(function(loc) {
+                createMarker(loc);
+                
+        });
+};
 
+var createMarker = function(loc){
+        var add = loc.Address;
+        var address = add.number + " " + add.streetName + " " + add.city + " " + add.state + " " + add.zip;
+        geo.geocode({ 'address': address }, function (results, status) {
+                if (status == 'OK') {
+                        var marker = new google.maps.Marker({
+                                map: maps,
+                                position: results[0].geometry.location
+                        });
+                        var dist = google.maps.geometry.spherical.computeDistanceBetween(myloc, results[0].geometry.location) * 0.000621371192;
+
+                        google.maps.event.addListener(marker, 'click', function () {
+
+                                var info_temp = "<div style='color:black;'><p>" + loc.Name + "</p><p>" + add.number + " " + add.streetName + "</p><p>" + add.city + " " + add.state + " " + add.zip + "</p><p>" + loc.phone + "</p><p>" + dist + " miles away</p></div>";
+                                console.log(add);
+                                infowindow.setContent(info_temp);
+                                infowindow.open(maps, marker);
+                        });
+                } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                }
+
+        });
+};
