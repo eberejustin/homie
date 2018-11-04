@@ -38,7 +38,7 @@ function navigate() {
 
 var initMap = function () {
         infowindow = new google.maps.InfoWindow();
-        myloc = new google.maps.LatLng(42.318928, -71.079979);
+        
         maps = new google.maps.Map(document.getElementById('map'), {
                 center: myloc,
                 zoom: 14, mapTypeControl: false, fullscreenControl: false
@@ -63,7 +63,7 @@ var makeChoice =  function(choice) {
                 case "prevent":
                         display("#stats");
                         break;
-                case "transition":
+                case "transitional":
                         display("#trans-info");
                         break;
                 case "drop-in":
@@ -78,9 +78,9 @@ var makeChoice =  function(choice) {
 
 var setInfo = function (choice) {
         var query = {
-                "data.tags": [choice, "emergency"]
+                "data.tags": choice+",emergency"
         };
-
+        myloc = new google.maps.LatLng(42.318928, -71.079979);
         display("#map-info");
         $(".maphead").text("Shelters: Emergency for " + choice);
         initMap();
@@ -95,11 +95,11 @@ var setInfo = function (choice) {
 //choose options ant transitional
 var setInfoT = function (choice) {
         var query = {
-                "data.tags": [choice, "transitional"]
+                "data.tags": choice +",transitional"
         };
-
+        myloc = new google.maps.LatLng(42.388553, -71.119345);
         display("#map-info");
-        $(".maphead").text("Housing: Emergency for " + choice);
+        $(".maphead").text("Housing: Transitional for " + choice);
         initMap();
         onedb.list('homie_locations', 'location', query)
                 .then(function (res) {
@@ -118,7 +118,6 @@ var back = function() {
 
 var setloc = function(locations){
         geo = new google.maps.Geocoder();
-        console.log(locations);
         locations.forEach(function(loc) {
                 createMarker(loc);
                 
@@ -139,7 +138,6 @@ var createMarker = function(loc){
                         google.maps.event.addListener(marker, 'click', function () {
 
                                 var info_temp = "<div style='color:black;'><p>" + loc.Name + "</p><p>" + add.number + " " + add.streetName + "</p><p>" + add.city + " " + add.state + " " + add.zip + "</p><p>" + loc.phone + "</p><p>" + dist + " miles away</p></div>";
-                                console.log(add);
                                 infowindow.setContent(info_temp);
                                 infowindow.open(maps, marker);
                         });
