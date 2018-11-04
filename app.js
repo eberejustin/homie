@@ -25,8 +25,8 @@ var onedb = new OneDBClient({
 });
 
 function navigate() {
-       
-        maps.panTo(myloc); 
+
+        maps.panTo(myloc);
         var image = "https://raw.githubusercontent.com/googlemaps/js-samples/gh-pages/places/icons/number_1.png";
         var marker = new google.maps.Marker({
                 map: maps,
@@ -38,7 +38,7 @@ function navigate() {
 
 var initMap = function () {
         infowindow = new google.maps.InfoWindow();
-        
+
         maps = new google.maps.Map(document.getElementById('map'), {
                 center: myloc,
                 zoom: 14, mapTypeControl: false, fullscreenControl: false
@@ -66,8 +66,8 @@ var makeChoice =  function(choice) {
                 case "transitional":
                         display("#trans-info");
                         break;
-                case "drop-in":
-                        // code block
+                case "resources":
+                        display("#resources");
                         break;
                 default:
                 // code block
@@ -88,8 +88,6 @@ var setInfo = function (choice) {
                 .then(function (res) {
                         setloc(res.items);
                 });
-        
-        
 }
 
 //choose options ant transitional
@@ -105,8 +103,6 @@ var setInfoT = function (choice) {
                 .then(function (res) {
                         setloc(res.items);
                 });
-
-
 }
 
 var back = function() {
@@ -120,7 +116,7 @@ var setloc = function(locations){
         geo = new google.maps.Geocoder();
         locations.forEach(function(loc) {
                 createMarker(loc);
-                
+
         });
 };
 
