@@ -44,7 +44,7 @@ body {
 }
 
 .space{
-    height: 100px;
+    height: 200px;
 }
 /*
  * Header
@@ -72,13 +72,15 @@ body {
 .back{float:left;}
 
 @media (min-width: 48em) {
-  .masthead-brand {
+
+.masthead-brand {
 
   }
 }
 
 .back {
     margin: auto 20px;
+    padding-top: 40px;
 
 }
 /*
@@ -145,6 +147,7 @@ hr {
     color: white;
     text-align: left;
     padding-left: 10px;
+    padding-top: 30px;
 }
 .submission {
     display: inline-block;
