@@ -220,5 +220,103 @@
                         "women",
                         "emergency"
                 ]
-        }
+        },
+    {
+                "Name": "Massachussets Bay Vets Center",
+                "Address": {
+                        "number": 2,
+                        "streetName": "North Street",
+                        "city": "Somerville",
+                        "state": "MA",
+                        "zip": "02144"
+                },
+                "phone": "(617) 627-9712",
+        "tags": [
+                        "transitional",
+                        "men", 
+                        "vet"
+                ]
+        },
+    {
+                "Name": "Next Step House",
+                "Address": {
+                        "number": 301,
+                        "streetName": "Medford Street",
+                        "city": "Somerville",
+                        "state": "MA",
+                        "zip": "02144"
+                },
+                "phone": "(617-776-8353)",
+        "tags": [
+                        "transitional",
+                        "women"
+                    
+                ]
+        },
+    {
+                "Name": "St. James Summer Shelter",
+                "Address": {
+                        "number": 66,
+                        "streetName": "Winthrop Street",
+                        "city": "Cambridge",
+                        "state": "MA",
+                        "zip": "02138"
+                },
+                "phone": "(857-334-5277)",
+        "tags": [
+                        "transitional",
+                        "men", 
+                        "women", 
+                        "vet"
+                ]
+        },
+    {
+                "Name": "Umoja Men's Transitional Program",
+                "Address": {
+                        "number": 402,
+                        "streetName": "Winthrop Street",
+                        "city": "Cambridge",
+                        "state": "MA",
+                        "zip": "02138"
+                },
+                "phone": "(857-334-5277)",
+        "tags": [
+                        "transitional",
+                        "men",
+                        "women",
+                        "vet"
+                ]
+        },
+    {
+                "Name": "Carey Program for Men",
+                "Address": {
+                        "number": 362,
+                        "streetName": "Green Street",
+                        "city": "Cambridge",
+                        "state": "MA",
+                        "zip": "02138"
+                },
+                "phone": "(617-349-6349)",
+        "tags": [
+                        "transitional",
+                        "men"
+                ]
+        },
+    {
+                "Name": "Preveention and Stabilization Services",
+                "Address": {
+                        "number": 1,
+                        "streetName": "Davis Square",
+                        "city": "Somerville",
+                        "state": "MA",
+                        "zip": "02144"
+                },
+                "phone": "(617-349-6349)",
+        "tags": [
+                        "transitional",
+                        "men"
+                ]
+        },
+    
+    
 ]
