@@ -103,3 +103,11 @@ body {
 .window{
         display:none;
 }
+
+#map-info{
+        height: 60%;
+}
+
+#map{
+        height: 400px;
+}
