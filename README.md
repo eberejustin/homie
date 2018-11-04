@@ -14,3 +14,8 @@ Our website allows for anyone facing the issue of homelessness to not be afraid 
 The frontend is a combination of jQuery, bootstrap and the google Maps API. The backend was implemented in [Onedb](https://one-db.org), the new app on the block that handles everything backend including deployment, database queries and server side code.
 
 ### The app is hosted on github pages at https://eberejustin.github.io/homie
+
+## Authors
+### Ebere Justin
+### Preston Rakovsky
+### Sauharda Rajbhandari
